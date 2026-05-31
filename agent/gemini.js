@@ -1,37 +1,38 @@
 // agent/gemini.js
-// Calls Gemini using a simple API key from Google AI Studio.
-// Get your free key at: https://aistudio.google.com/apikey
-
 import dotenv from "dotenv";
 dotenv.config();
 
 const MODEL_NAME = "gemini-2.5-flash";
 
 export async function callGemini({ systemPrompt, userMessage, history = [] }) {
-  const apiKey   = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) throw new Error("GEMINI_API_KEY not set in .env");
 
   const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${apiKey}`;
 
+  // Fix: Gemini requires 'parts' array, not 'content' string
+  const formattedHistory = history
+    .filter(m => m.role && (m.content || m.parts))
+    .map(m => ({
+      role:  m.role === "assistant" ? "model" : "user",
+      parts: m.parts || [{ text: m.content || "" }],
+    }));
+
   const contents = [
-    ...history,
+    ...formattedHistory,
     { role: "user", parts: [{ text: userMessage }] },
   ];
 
   const body = {
     systemInstruction: { parts: [{ text: systemPrompt }] },
     contents,
-    generationConfig: {
-      temperature:     0.3,
-      maxOutputTokens: 2048,
-      topP:            0.8,
-    },
+    generationConfig: { temperature: 0.3, maxOutputTokens: 2048, topP: 0.8 },
   };
 
   const res = await fetch(endpoint, {
-    method:  "POST",
+    method: "POST",
     headers: { "Content-Type": "application/json" },
-    body:    JSON.stringify(body),
+    body: JSON.stringify(body),
   });
 
   if (!res.ok) {
