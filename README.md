@@ -242,7 +242,7 @@ Total Indonesia: 1,075 hotspots terdeteksi
 - [x] Gemini 2.5 Flash agent — NLQ in Bahasa & English
 - [x] Cross-correlation engine — multi-source reasoning
 - [x] Province coordinate mapping — all 34 provinces
-- [ ] React + Next.js frontend dashboard
+- [x] React + Vite frontend dashboard
 - [ ] Interactive Indonesia map with province drill-down
 - [ ] Google Cloud Agent Builder integration
 - [ ] Firebase Hosting deployment
@@ -269,8 +269,8 @@ Built for the **[Google Cloud AI Hackathon 2026](https://devpost.com/) — Elast
 | Name | Role |
 |------|------|
 | Hanif Muhammad Rifqi | Project Lead · Data Pipeline · AI Agent |
-| TBA | Frontend Designer |
-| TBA | AI / Backend Engineer |
+| Hannan Muhammad | Frontend Designer |
+| Muhammad Hanif Fadhillah | AI / Backend Engineer |
 
 ---
 
