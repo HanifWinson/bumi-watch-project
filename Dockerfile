@@ -12,12 +12,12 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 # Copy MCP server and shared files
-COPY mcp/server.js ./mcp/
-COPY config/elastic.js ./config/
-COPY utils/helpers.js ./utils/
+COPY agent/ ./agent/
+COPY config/ ./config/
+COPY utils/ ./utils/
 
 # Cloud Run uses PORT env variable
-ENV PORT=8080
-EXPOSE 8080
+ENV PORT=3001
+EXPOSE 3001
 
 CMD ["node", "mcp/server.js"]
