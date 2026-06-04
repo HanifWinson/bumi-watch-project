@@ -54,7 +54,7 @@ Generic AI chatbots answer from training data. Bumi Watch answers from **live sa
 ```
 ┌─────────────────────────────────────────────────────┐
 │                   FRONTEND (WIP)                     │
-│         React + Next.js · Google Maps API            │
+│         React + Vite · Google Maps API            │
 └───────────────────────┬─────────────────────────────┘
                         │ POST /api/agent
 ┌───────────────────────▼─────────────────────────────┐
