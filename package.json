@@ -9,6 +9,7 @@
     "agent": "node agent/index.js",
     "mcp": "node mcp/server.js",
     "dev": "node --watch agent/index.js"
+    "start": "node agent/index.js"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^8.13.0",
