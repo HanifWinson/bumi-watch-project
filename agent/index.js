@@ -1,4 +1,4 @@
-g// agent/index.js
+// agent/index.js
 // Express server that exposes the Bumi Watch Gemini agent as an HTTP API.
 // The frontend calls POST /api/agent with a question and gets back an AI answer.
 
