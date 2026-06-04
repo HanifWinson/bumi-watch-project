@@ -8,7 +8,7 @@
     "setup": "node -e \"import('./config/elastic.js').then(m => m.setupIndices())\"",
     "agent": "node agent/index.js",
     "mcp": "node mcp/server.js",
-    "dev": "node --watch agent/index.js"
+    "dev": "node --watch agent/index.js",
     "start": "node agent/index.js"
   },
   "dependencies": {
