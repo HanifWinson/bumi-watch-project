@@ -1,4 +1,4 @@
-// agent/index.js
+g// agent/index.js
 // Express server that exposes the Bumi Watch Gemini agent as an HTTP API.
 // The frontend calls POST /api/agent with a question and gets back an AI answer.
 
@@ -19,7 +19,7 @@ import {
 dotenv.config();
 
 const app  = express();
-const PORT = process.env.AGENT_PORT || 3001;
+const PORT = process.env.PORT || process.env.AGENT_PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
