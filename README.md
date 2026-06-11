@@ -281,6 +281,5 @@ Made with 🌿 for Indonesia · Google Cloud AI Hackathon 2026
 
 *Bumi = Earth in Bahasa Indonesia*
 
-*"Gudang data · Pintu masuk · Otak yang menjawab"*
 
 </div>
